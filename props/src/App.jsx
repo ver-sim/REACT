@@ -1,5 +1,5 @@
 import { Age } from "./Age";
-import { Welcome } from "./Hello";
+import { Welcome } from "./Welcome";
 
 export function App() {
     return (
