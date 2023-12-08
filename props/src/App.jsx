@@ -1,9 +1,10 @@
+import { Age } from "./Age";
 import { Welcome } from "./Hello";
 
 export function App() {
     return (
-        <div>
-            <Welcome name="John" age={30}/>
-        </div>
+        <Welcome name="John">
+            <Age age={30}/>
+        </Welcome>
     );
 }

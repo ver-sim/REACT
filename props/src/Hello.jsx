@@ -1,9 +1,9 @@
 // eslint-disable-next-line react/prop-types
-export function Welcome({ name, age }) {
+export function Welcome({ name, children }) {
     return (
         <div>
             <p>Welcome, <strong>{name}</strong>!</p>
-            <p>Your age is {age}</p>
+            {children}
         </div>
     );
 }
