@@ -1,19 +1,5 @@
-import { Age } from "./Age";
-import { AlertClock } from "./AlertClock";
-import { Welcome } from "./Welcome";
+import { Coounter } from "./Counter";
 
-export function App() {
-    function handleShowTime(){
-        const now = new Date;
-
-        alert(`The time is ${now.toLocaleTimeString()}`)
-    }
-    return (
-        <div>
-            <Welcome name="John">
-                <Age age={30}/>
-            </Welcome>
-            <AlertClock onClick={handleShowTime}/>
-        </div>
-    );
+export function App(){
+    return <Coounter />
 }
