@@ -1,17 +1,25 @@
 import { useState } from "react";
+import { CounterDisplay } from "./CounterDisplay";
 
 // eslint-disable-next-line react/prop-types
-export function Coounter({ startValue = 0}) {
+export function Counter({ startValue = 0}) {
     const [counter, setCounter] = useState(startValue);
-    function handleCounterClick() {
+    function handleCounterAdd() {
         setCounter((count) => count + 1) 
-        // è buona pratica inserire una callback invece che un paramatro, perché via della particolare carreteristiche funzionalità di background di react
+    }
+    function handleCounterDelete() {
+        setCounter((count) => count - 1) 
+    }
+    function handleCounterReset() {
+        setCounter(startValue) 
     }
 
     return (
         <div>
-            <h2>How many time you&apos;ve clicked the button? {counter}</h2>
-            <button onClick={handleCounterClick}>Click me!</button>
+            <CounterDisplay counter={counter}/>
+            <button onClick={handleCounterAdd}>Add</button>
+            <button onClick={handleCounterDelete}>Delete</button>
+            <button onClick={handleCounterReset}>Reset</button>
         </div>
     );
 }

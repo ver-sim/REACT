@@ -1,5 +1,5 @@
-import { Coounter } from "./Counter";
+import { Counter } from "./Counter";
 
 export function App(){
-    return <Coounter />
+    return <Counter />
 }
