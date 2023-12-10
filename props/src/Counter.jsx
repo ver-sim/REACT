@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 export function Coounter({ startValue = 0}) {
     const [counter, setCounter] = useState(startValue);
+
+    useEffect(() => {
+        console.log(`counter value is ${counter}`);
+    })
+
     function handleCounterClick() {
         setCounter((count) => count + 1) 
-        // è buona pratica inserire una callback invece che un paramatro, perché via della particolare carreteristiche funzionalità di background di react
     }
 
     return (
