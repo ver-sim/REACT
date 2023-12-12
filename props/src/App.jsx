@@ -1,5 +1,6 @@
-import { MouseClicker } from "./MouseClicker";
+import { InteractiveWelcome } from "./InteractiveWelcome";
+
 
 export function App(){
-    return <MouseClicker />
+    return <InteractiveWelcome />
 }
