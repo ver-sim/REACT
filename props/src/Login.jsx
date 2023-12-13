@@ -8,7 +8,8 @@ function createData() {
     }
 }
 
-export function Login() {
+// eslint-disable-next-line react/prop-types
+export function Login({ logged }) {
     const [data, setData] = useState(createData());
 
     function handelChangeInput(event) {
@@ -25,11 +26,16 @@ export function Login() {
         })
     }
 
+    const handelLogin = () => {
+        logged(data)
+    }
+    
     return (
         <div>
             <input type="text" name="username" value={data.username} onChange={handelChangeInput}/>
             <input type="password" name="password" value={data.password} onChange={handelChangeInput}/>
             <input type="checkbox" name="remember" checked={data.remember} onChange={handelChangeInput}/>
+            <button disabled={!data.username || !data.password} onClick={handelLogin}>Login</button>
         </div>
     );
 }
