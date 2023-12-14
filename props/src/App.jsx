@@ -1,10 +1,5 @@
-import { Login } from "./Login";
-
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 export function App(){
-    const onLogin = (e) => {
-        console.log(e);
-    }
-
-    return <Login logged={onLogin}/>
+    return <UncontrolledLogin />
 }
