@@ -2,14 +2,12 @@ export const UncontrolledLogin = () => {
     
     const handelFormSubmit = (event) => {
         event.preventDefault()
-        const username = event.target.elements.namedItem('username').value;
-        const password = event.target.elements.namedItem('password').value;
-        const remember = event.target.elements.namedItem('remember').checked;
+        const data = new FormData(event.target);
 
         const formData = {
-            username,
-            password,
-            remember,
+            username: data.get('username'),
+            password: data.get('password'),
+            remember: data.get('remember') === 'on' ? true : false,
         }
         console.log(formData);
     }
@@ -24,5 +22,12 @@ export const UncontrolledLogin = () => {
         </form>
     );
 }
+/* Vantaggi di FormData sono:
+    - codice con meno righe rispetto ad non usarlo
+    - usando questa classe si incorre anche ad un minore errore ad accedere al valore
+    - è crossplatform
 
-// Implement an UncontrolledLogin component that implements all the operations of the Login component, but does so using uncontrolled components. Attempt to access the values of the form using the DOM API by reading the event.target of the onSubmit event handler.
+  Svantaggi:
+   - poco usato
+   - per accedere ad alcuni valori bisogna usare del condizioni(es remember)
+*/
