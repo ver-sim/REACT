@@ -1,5 +1,6 @@
-import { FocusableInput } from "./FocusableInput";
+import { StrictMode } from "react";
+import { FocusInputStrictMode } from "./FocusInputStrictMode";
 
 export function App(){
-    return <FocusableInput />
+    return <StrictMode> <FocusInputStrictMode /></StrictMode>
 }
