@@ -1,5 +1,5 @@
-import { UncontrolledLogin } from "./UncontrolledLogin";
+import { FocusableInput } from "./FocusableInput";
 
 export function App(){
-    return <UncontrolledLogin />
+    return <FocusableInput />
 }
