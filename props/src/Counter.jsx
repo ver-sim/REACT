@@ -10,12 +10,16 @@ export function Counter({ startValue = 0}) {
 
     useEffect(() => {
         if (counter > startValue) {
-            valRef.current = 'up';
-            console.log(valRef.current);
+            if(valRef.current !== 'up'){
+                valRef.current = 'up';
+                console.log(valRef.current);        
+            }
         }
         else if (counter < startValue){
-            valRef.current = 'down';
-            console.log(valRef.current);
+            if(valRef.current !== 'down'){
+                valRef.current = 'down';
+                console.log(valRef.current);
+            }
         }
         else{
             valRef.current = 'initial value';
