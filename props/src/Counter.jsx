@@ -1,11 +1,31 @@
 import { useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
 export function Counter({ startValue = 0}) {
     const [counter, setCounter] = useState(startValue);
+    let valRef = useRef(null);
+
+    useEffect(() => {
+        if (counter > startValue) {
+            valRef.current = 'up';
+            console.log(valRef.current);
+        }
+        else if (counter < startValue){
+            valRef.current = 'down';
+            console.log(valRef.current);
+        }
+        else{
+            valRef.current = 'initial value';
+            console.log(valRef.current);
+        }
+    }, [counter, startValue])
+
     function handleCounterAdd() {
         setCounter((count) => count + 1) 
+      
     }
     function handleCounterDelete() {
         setCounter((count) => count - 1) 
