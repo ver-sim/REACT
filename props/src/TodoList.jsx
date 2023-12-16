@@ -7,9 +7,15 @@ export const TodoList = () => {
     const [toDoAdd, setToDoAdd] = useState('');
 
     const handleTodoButton = (e) => {
-        e.preventDefault()
-        setTodos(()=>[...todos, toDoAdd])
+        e.preventDefault();
+        setTodos(()=>[...todos, toDoAdd]);
         setToDoAdd('');
+    }
+
+    const handleRemoveTodo = (index) => {
+        const copyTodo = [...todos];
+        copyTodo.splice(index, 1);
+        setTodos(copyTodo);
     }
 
     return (
@@ -20,7 +26,10 @@ export const TodoList = () => {
                 <button type="reset" onClick={() => setTodos([])}>Reset</button>
             </form>
             <ul>
-                {todos.map((todo, index) => <li key={index}>{todo}</li>)}
+                {todos.map((todo, index) => 
+                    <li key={index}>
+                        {todo} <button onClick={() => handleRemoveTodo(index)}>Remove</button>
+                    </li>)}
             </ul>
         </div>
     );   
