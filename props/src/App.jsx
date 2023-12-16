@@ -1,6 +1,6 @@
-// import { StrictMode } from "react";
-import { Counter } from "./Counter";
+
+import { TodoList } from "./TodoList";
 
 export function App(){
-    return <Counter />
+    return <TodoList />
 }
