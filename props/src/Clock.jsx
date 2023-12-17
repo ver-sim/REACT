@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from "./Clock.module.scss"
 
 export function Clock() {
     const [time, setTime] = useState(new Date());
@@ -10,5 +11,5 @@ export function Clock() {
             clearInterval(id)
         }
     }, [])
-    return <h2>The current time is {time.toLocaleTimeString()}</h2>
+    return <h2 className={classes.clock}>The current time is {time.toLocaleTimeString()}</h2>
 }
