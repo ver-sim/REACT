@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import classes from "./TodoList.module.scss"
 
 export const TodoList = () => {
 
@@ -19,8 +20,8 @@ export const TodoList = () => {
     }
 
     return (
-        <div>
-            <form>
+        <div className={classes.todoList}>
+            <form className={classes.formList}>
                 <input type="text" value={toDoAdd} onChange={(e) => setToDoAdd(() => e.target.value)}/>
                 <button onClick={handleTodoButton} >Add todo</button>
                 <button type="reset" onClick={() => setTodos([])}>Reset</button>

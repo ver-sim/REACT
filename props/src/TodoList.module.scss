@@ -1,0 +1,17 @@
+.todoList {
+    text-align: center;
+    border: 1px solid black;
+    background-color: rgb(169, 235, 235);
+    display: flex;
+    align-items: center;
+    // align-content: center;
+    flex-direction: column;
+
+}
+
+.formList {
+    display: flex;
+    gap: 1rem;
+    padding-top: 20px;
+}
+

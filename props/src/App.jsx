@@ -1,4 +1,5 @@
 import { Clock } from "./Clock";
+import { TodoList } from "./TodoList";
 import { Welcome } from "./Welcome";
 
 export function App(){
@@ -6,6 +7,7 @@ export function App(){
         <>
             <Welcome name={"mario"}/>
             <Clock />
+            <TodoList />
         </>
     );
 }
