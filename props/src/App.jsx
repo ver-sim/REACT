@@ -1,11 +1,27 @@
+import { useState } from "react";
+import { Clock } from "./Clock";
+import { LanguageContext } from "./LanguageContext";
 
-import { Container } from "./Container";
-import { TodoList } from "./TodoList";
+
 
 export function App(){
+    const [language, setLanguage] = useState('en');
+
+    const hnadleLanguage = (lang) => {
+
+        setLanguage(() => lang.target.value)
+    }
+
     return (
-        <Container title={<h1>Click for show the to do list</h1>}>
-            <TodoList />
-        </Container>
+        <div>
+            <select onChange={hnadleLanguage}> change language
+                <option value="en">english</option>
+                <option value="it">italiano</option>
+                <option value="fr">français</option>
+            </select>
+            <LanguageContext.Provider value={language}>
+                <Clock />
+            </LanguageContext.Provider>
+        </div>
     );
 }
