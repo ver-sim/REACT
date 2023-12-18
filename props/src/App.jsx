@@ -1,12 +1,11 @@
 
+import { Container } from "./Container";
 import { TodoList } from "./TodoList";
-import { Welcome } from "./Welcome";
 
 export function App(){
     return (
-        <>
-            <Welcome name={"mario"}/>
+        <Container title={<h1>Click for show the to do list</h1>}>
             <TodoList />
-        </>
+        </Container>
     );
 }

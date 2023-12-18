@@ -1,3 +1,12 @@
+.container {
+    border: 5px solid red;
+    background-color: white;
+}
+
+.contanier-content-hidden{
+    display: none;
+}
+
 .welcome {
     background-color: beige;
     border: 2px solid black;
