@@ -29,14 +29,14 @@ export const GithubUser = ({ username }) => {
         fetchApi();
     }, [username]);
     return (
-        <div>
+        <li>
             {error && <h2>{error}</h2>}
             {loading && <h2>Loading...</h2>}
-            {userData && <li><h3>User&apos;s name: {userData.name}</h3>
+            {userData && <div><h3>User&apos;s name: {userData.name}</h3>
               <p>Login: {userData.login}</p>
               <img src={userData.avatar_url} alt="avatar" width={100} height={100} />
-            </li>}    
-        </div>
+            </div>}    
+        </li>
     );
 }
 
