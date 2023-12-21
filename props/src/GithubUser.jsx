@@ -20,25 +20,22 @@ export const GithubUser = ({ username }) => {
             setError("there is a problem");
             setLoading(false);
             setUserData(null)
-          }
+           }
   
         } catch (error) {
-          setError(error);
+          setError(error.message);
         }
       }
         fetchApi();
     }, [username]);
-    console.log(username)
     return (
         <div>
             {error && <h2>{error}</h2>}
             {loading && <h2>Loading...</h2>}
-            {userData && <div><h1>User&apos;s name: {userData.name}</h1>
-              <h2>Login: {userData.login}</h2>
-              <img src={userData.avatar_url} alt="avatar" />
-            </div>}
-            
-            
+            {userData && <li><h3>User&apos;s name: {userData.name}</h3>
+              <p>Login: {userData.login}</p>
+              <img src={userData.avatar_url} alt="avatar" width={100} height={100} />
+            </li>}    
         </div>
     );
 }

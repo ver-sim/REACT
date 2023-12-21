@@ -1,7 +1,8 @@
 // import { useState } from "react";
 // import { Clock } from "./Clock";
 // import { LanguageContext } from "./LanguageContext";
-import { GithubUser } from "./GithubUser";
+// import { GithubUser } from "./GithubUser";
+import { GithubUsers } from "./GithubUsers";
 
 
 
@@ -23,7 +24,8 @@ export function App(){
             <LanguageContext.Provider value={language}>
                 <Clock />
             </LanguageContext.Provider> */}
-            <GithubUser username={'ver-sim'}/>
+            {/* <GithubUser username={'ver-sim'}/> */}
+            <GithubUsers />
         </div>
     );
 }
