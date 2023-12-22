@@ -1,9 +1,9 @@
-import { Form } from "./Form";
+import { GithubUser } from "./GithubUser";
 
 export function App(){
     return (
         <div>
-            <Form />
+            <GithubUser username={'ver-simfaaaa'}/>
         </div>
     );
 }
