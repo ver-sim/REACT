@@ -1,9 +1,13 @@
-import { GithubUser } from "./GithubUser";
+import { useCurrentLocation } from "./useCurrentLocation";
 
 export function App(){
+    const {location, getLocation, error, loading} = useCurrentLocation();
     return (
         <div>
-            <GithubUser username={'ver-simfaaaa'}/>
+            <button onClick={getLocation}>Get current location</button>
+            {error && <p>Error: {error}</p>}
+            {loading && <h1>Loading...</h1> }
+            {location && <p>your location: {location.latitude}, {location.longitude}</p> }
         </div>
     );
 }
