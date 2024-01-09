@@ -1,9 +1,10 @@
-import { Welcome } from "./Hello";
+import { Route, Routes } from "react-router-dom";
+import { Welcome } from "./Welcome";
 
 export function App() {
     return (
-        <div>
-            <Welcome name="John" />
-        </div>
+        <Routes>
+            <Route path="/" element={<Welcome name="John"/>} />
+        </Routes>
     );
 }
