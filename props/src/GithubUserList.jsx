@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 // import { ShowGithubUser } from "./ShowGithubUser";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export const GithubUserList = () => {
     const [user, setUser] = useState([]);
@@ -15,14 +15,17 @@ export const GithubUserList = () => {
     }, []);
 
     return (
-        <ul>
-            {user.map((val, key) => (
-                <li key={key}>
-                    <Link to="users">{val.login}</Link>
-                    
-                </li>
-            ))}
-        </ul>
+        <div>
+            <ul>
+                {user.map((val, key) => (
+                    <li key={key}>
+                        <Link to={`/users/${val.login}`}>{val.login}</Link>
+                    </li>
+                ))}
+            </ul>
+            <hr />
+            <Outlet />
+        </div>
     );
 
 }
