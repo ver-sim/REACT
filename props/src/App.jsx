@@ -13,6 +13,7 @@ export function App() {
                 <Route path="/" element={<Welcome name="John"/>} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="users/:username" element={<ShowGithubUser />} />
+                <Route path="*" element={<p>Not found</p>} />
             </Routes>
         </>
     );
