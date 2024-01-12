@@ -3,12 +3,10 @@ import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
 import { ShowGithubUser } from "./ShowGithubUser";
 import { GithubUserList } from "./GithubUserList";
-// import { GithubUser } from "./GithubUser";
 
 export function App() {
     return (
         <>
-            {/* <GithubUser username={''} /> */}
             <Link to="/">Welcome </Link>|
             <Link to="/counter"> Counter </Link> | 
             <Link to="/users"> SwohGitHubUser </Link>

@@ -3,10 +3,11 @@ import { useGithubUser } from "./useGithubUser";
 
 
 export const GithubUser = ({ username }) => {
-    const {userData, error, isLoading } = useGithubUser(username)
+    const {userData, error, isLoading, onRefresh } = useGithubUser(username)
 
     return (
         <div>
+            <button onClick={onRefresh}>refresh</button>
             {error && <h2>you have an error </h2>}
             {isLoading && <h2>Loading...</h2>}
             {userData && <div><h1>User&apos;s name: {userData.name}</h1>
